@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 import time
 import numpy as np
 from langchain_core.messages import AIMessage, HumanMessage
@@ -15,6 +16,9 @@ try:
 except ImportError: 
     print("No module named 'google' found")
  
+
+os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+
 load_dotenv()
 
 
